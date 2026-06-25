@@ -1,0 +1,119 @@
+.gs {
+  position: relative;
+  background: #000;
+}
+.gs__stage {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1400px;
+}
+.gs__aura {
+  position: absolute;
+  width: 70vmin;
+  height: 70vmin;
+  border-radius: 50%;
+  filter: blur(40px);
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.gs__device {
+  position: relative;
+  z-index: 2;
+  width: min(560px, 84vw);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.gs__device .glasses {
+  width: 100% !important;
+}
+.gs__captions {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 9vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  z-index: 3;
+  pointer-events: none;
+}
+.gs__caption {
+  grid-area: 1 / 1;
+  max-width: 620px;
+  padding: 0 24px;
+  will-change: opacity, transform;
+}
+.gs__caption-title {
+  margin: 0;
+  font-size: clamp(30px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.04;
+  background: linear-gradient(120deg, #fff, #c7d6e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gs__caption-sub {
+  margin: 12px 0 0;
+  font-size: clamp(15px, 2vw, 19px);
+  color: #a1a1a6;
+}
+.gs__rail {
+  position: absolute;
+  top: 50%;
+  right: 26px;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 120px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  z-index: 3;
+}
+.gs__rail-fill {
+  display: block;
+  width: 100%;
+  background: linear-gradient(to bottom, #7fd7ff, #ff9ad1);
+  border-radius: 3px;
+}
+.gs--reduced .gs__stage {
+  height: auto;
+  padding: 120px 24px 40px;
+}
+.gs--reduced .gs__rail {
+  display: none;
+}
+.gs__static {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 24px 100px;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.gs__static li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 18px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+.gs__static strong {
+  font-size: 20px;
+  color: #f5f5f7;
+}
+.gs__static span {
+  font-size: 15px;
+  color: #a1a1a6;
+}
+@media (max-width: 720px) {
+  .gs__rail { right: 12px; }
+}
